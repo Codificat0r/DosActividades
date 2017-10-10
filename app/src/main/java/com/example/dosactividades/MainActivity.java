@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void openWebPage(String url) {
         //Comprobamos que se trata de un https: o http:. Tambien lo podemos comprobar nosotros
         //con url.substring y extraemos del 0 al 7 (extrae uno menos del final) para http:// y
-        //del 0 al 8 para https://
+        //del 0 al 8 para https://. No usaremos en este ultimo caso ==, usamos el .equals de los strings.
         if (URLUtil.isHttpsUrl(url) || URLUtil.isHttpUrl(url)) {
             //Debe ser del tipo https://... sino dice que no hay navegador.
             Uri uri = Uri.parse(url);
